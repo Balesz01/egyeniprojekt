@@ -1,4 +1,3 @@
-//random generálás
 function randomgen() {
     return Math.floor(Math.random() * (6 - 1 + 1)) + 1;
 }
@@ -23,8 +22,8 @@ document.getElementById('dobasGomb').addEventListener('click', () => {
     nyertestext.innerHTML = nagyobb;
 
     const tort = document.createElement('p');
-    tort.innerText = `Játékos 1 dobása: ${dobas1} és Játékos 2 dobása: ${dobas2} és a kimenetel  ${nagyobb}`;
+    tort.innerText = `🎲 ${dobas1} - ${dobas2} | ${nagyobb}`;
 
     container.append(img1, img2);
-    tortenet.append(tort);
+    tortenet.prepend(tort);
 });
