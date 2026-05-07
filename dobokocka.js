@@ -3,18 +3,17 @@ function randomgen() {
 }
 
 const container = document.getElementById('kockadiv');
+const img1 = document.getElementById('img1');
+const img2 = document.getElementById('img2');
 const nyertestext = document.getElementById('nyertes');
 const tortenet = document.getElementById('tortenetdiv');
 
 document.getElementById('dobasGomb').addEventListener('click', () => {
     container.innerHTML = '';
 
-    const img1 = document.createElement('img');
     let dobas1 = randomgen();
     img1.src = `img/dob${dobas1}.png`; 
 
-
-    const img2 = document.createElement('img');
     let dobas2 = randomgen();
     img2.src = `img/dob${dobas2}.png`;
 
@@ -22,7 +21,7 @@ document.getElementById('dobasGomb').addEventListener('click', () => {
     nyertestext.innerHTML = nagyobb;
 
     const tort = document.createElement('p');
-    tort.innerText = `🎲 ${dobas1} - ${dobas2} | ${nagyobb}`;
+    tort.innerHTML = `🎲 ${dobas1} - ${dobas2} | ${nagyobb}`;
 
     container.append(img1, img2);
     tortenet.prepend(tort);

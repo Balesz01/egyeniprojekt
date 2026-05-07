@@ -21,7 +21,7 @@ body {
 }
 
 #kockadiv {
-    gap: 40px; /* Nagyobb távolság a két kocka között */
+    gap: 240px !important;/* Nagyobb távolság a két kocka között */
     margin: 40px 0;
 }
 
