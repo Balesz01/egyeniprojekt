@@ -6,9 +6,12 @@ function randomgen() {
 
 const container = document.getElementById('kockadiv');
 
-const ujDiv = document.createElement('div');
-ujDiv.textContent = 'Szia! Én egy új elem vagyok.';
-ujDiv.style.color = 'blue';
+const Div1 = document.createElement('div');
+Div1.innerHTML("")
+
+const Div2 = document.createElement('div');
+Div2.textContent = 'Szia! Én egy új elem vagyok.';
+Div2.style.color = 'blue';
 
 
-container.appendChild(ujDiv);
+container.appendChild(Div1,Div2);
