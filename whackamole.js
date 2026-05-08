@@ -1,12 +1,25 @@
 function randomgen() {
     return Math.floor(Math.random() * (9)) + 1;
 }
-
+const score = document.getElementById("score") 
 document.getElementById('inditoGomb').addEventListener('click', () => {
+    let db = 0
     let btn
     let jt
     let img
     let idoLejarat = Date.now() + 30000;
+
+    for (let i = 1; i <= 9; i++) {
+        document.getElementById(`btn${i}`).addEventListener('click', () => {
+            let img = document.getElementById(`jt${i}`);
+            if (img.src.endsWith("mole.png")) { 
+                img.src = `img/lyuk.png`;
+                db++;
+                score.innerHTML = `Pont: ${db}`;
+            }
+        });
+    }
+
     function jatekKör() {
         let randomszam = randomgen();
         if (Date.now() >= idoLejarat) {
@@ -23,17 +36,16 @@ document.getElementById('inditoGomb').addEventListener('click', () => {
             }
         }
 
-        document.getElementById(btn).addEventListener('click', () => {
-            const img = document.getElementById(jt);
-            img.src = `img/lyuk.png`;
-        });
-
         setTimeout(() => {  
             img.src = `img/lyuk.png`;
-            jatekKör()
+            setTimeout(() => {
+                jatekKör()
+            }, 500);
         }, 1000);
     
     }
-    jatekKör()
+    setTimeout(() => {
+        jatekKör()
+    }, 500);
 });
 
