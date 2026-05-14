@@ -1,14 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
 body {
     background-color: #2c3e50; /* Sötét háttér, hogy kiemelkedjen a játéktér */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: flex-start; /* Fentre igazítja a teljes tartalmat */
+    min-height: 100vh; /* Fix 100vh helyett rugalmas minimum magasság */
     margin: 0;
     font-family: Arial, sans-serif;
+    padding-bottom: 40px; /* Hogy a legalsó gomb alatt is maradjon egy kis rés */
 }
 
+/* Teljes szélességű, reszponzív navigációs sáv */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Középre igazítja a menüt */
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #1a1a1e;
+    border-bottom: 2px solid #29292e;
+    margin-bottom: 30px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Mobil kijelzőn több sorba törik, ha nem fér el */
+    justify-content: center;
+}
+
+.nav-links a {
+    color: #eeeeee;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    color: #00adb5;
+}
 #jatekter {
     background-color: #9dc428; /* Világoskék fű/égbolt jellegű háttér */
     padding: 20px;
